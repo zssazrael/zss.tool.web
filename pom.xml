@@ -35,6 +35,7 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jsp-api</artifactId>
             <version>7.0.73</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>zss</groupId>
