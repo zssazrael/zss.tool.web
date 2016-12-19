@@ -26,37 +26,24 @@
         </plugins>
     </build>
     <dependencies>
-      <dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.21</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.tomcat</groupId>
-    <artifactId>tomcat-jsp-api</artifactId>
-    <version>7.0.72</version>
-    <scope>provided</scope>
-</dependency>
-          <dependency>
-              <groupId>org.apache.tomcat</groupId>
-              <artifactId>tomcat-el-api</artifactId>
-              <version>7.0.72</version>
-              <scope>provided</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.apache.tomcat</groupId>
-              <artifactId>tomcat-servlet-api</artifactId>
-              <version>7.0.72</version>
-              <scope>provided</scope>
-          </dependency>
-      <dependency>
-          <groupId>zss</groupId>
-          <artifactId>tool</artifactId>
-          <version>2016.09.24</version>
-      </dependency>
-  </dependencies>
-  <dependencyManagement>
-      <dependencies>
-      </dependencies>
-  </dependencyManagement>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>7.0.73</version>
+        </dependency>
+        <dependency>
+            <groupId>zss</groupId>
+            <artifactId>tool</artifactId>
+            <version>2016.09.24</version>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
 </project>
