@@ -3,7 +3,7 @@
 
     <groupId>zss</groupId>
     <artifactId>tool.web</artifactId>
-    <version>2017.04.30</version>
+    <version>2017.05.01</version>
     <packaging>jar</packaging>
 
     <name>tool.web</name>
