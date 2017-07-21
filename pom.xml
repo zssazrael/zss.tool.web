@@ -3,7 +3,7 @@
 
     <groupId>zss</groupId>
     <artifactId>tool.web</artifactId>
-    <version>2017.05.01</version>
+    <version>2017.07.21</version>
     <packaging>jar</packaging>
 
     <name>tool.web</name>
@@ -45,6 +45,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>
