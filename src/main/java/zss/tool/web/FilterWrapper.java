@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 import zss.tool.Version;
 
-@Version("2017.07.21")
+@Version("2017.09.19")
 public class FilterWrapper implements Filter {
     private FilterConfig filterConfig;
     private Filter filter;
@@ -37,7 +37,6 @@ public class FilterWrapper implements Filter {
     @Override
     public void init(final FilterConfig filterConfig) throws ServletException {
         this.filterConfig = filterConfig;
-        filterConfig.getServletContext().setAttribute(filterConfig.getFilterName(), this);
     }
 
     @Override
