@@ -18,7 +18,7 @@ import zss.tool.ReflectTool;
 import zss.tool.StringObjectMap;
 import zss.tool.Version;
 
-@Version("2017.05.01")
+@Version("2017.12.03")
 public final class WebTool {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebTool.class);
 
@@ -83,14 +83,14 @@ public final class WebTool {
     }
 
     public static Cookie getCookie(final HttpServletRequest request, final String name) {
-        if ((request == null) || (name == null)) {
+        if ((request == null) || StringUtils.isEmpty(name)) {
             return null;
         }
         return getCookie(request.getCookies(), name);
     }
 
     public static Cookie getCookie(final Cookie[] cookies, final String name) {
-        if ((cookies == null) || (name == null)) {
+        if ((cookies == null) || StringUtils.isEmpty(name)) {
             return null;
         }
         for (Cookie cookie : cookies) {
@@ -108,5 +108,13 @@ public final class WebTool {
             request.setAttribute("model", object);
         }
         return (StringObjectMap) object;
+    }
+
+    public static String getCookieValue(final HttpServletRequest request, final String name) {
+        final Cookie cookie = getCookie(request, name);
+        if (cookie == null) {
+            return "";
+        }
+        return StringUtils.defaultString(cookie.getValue());
     }
 }
