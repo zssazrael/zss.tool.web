@@ -7,6 +7,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
@@ -18,7 +19,7 @@ import zss.tool.ReflectTool;
 import zss.tool.StringObjectMap;
 import zss.tool.Version;
 
-@Version("2017.12.03")
+@Version("2018-01-08")
 public final class WebTool {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebTool.class);
 
@@ -116,5 +117,9 @@ public final class WebTool {
             return "";
         }
         return StringUtils.defaultString(cookie.getValue());
+    }
+
+    public static void setNoStore(final HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-store");
     }
 }
