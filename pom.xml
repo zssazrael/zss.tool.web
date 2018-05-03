@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>tool.web</name>
-    <url>http://maven.apache.org</url>
+    <url>http://zbox.site/maven/zss/tool.web/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>zss</groupId>
             <artifactId>tool</artifactId>
-            <version>2017.10.09</version>
+            <version>2018.03.26</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

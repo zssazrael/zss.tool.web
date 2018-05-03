@@ -1,6 +1,7 @@
 package zss.tool.web;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -16,11 +17,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import zss.tool.LoggedException;
+import zss.tool.NumberTool;
 import zss.tool.ReflectTool;
 import zss.tool.StringObjectMap;
 import zss.tool.Version;
 
-@Version("2018.02.03")
+@Version("2018.05.03")
 public final class WebTool {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebTool.class);
 
@@ -130,5 +132,13 @@ public final class WebTool {
 
     public static int getParameter(final HttpServletRequest request, final String name, final int defaultValue) {
         return NumberUtils.toInt(getParameter(request, name), defaultValue);
+    }
+
+    public static double getParameter(final HttpServletRequest request, final String name, final double defaultValue) {
+        return NumberUtils.toDouble(getParameter(request, name), defaultValue);
+    }
+
+    public static BigDecimal getParameter(final HttpServletRequest request, final String name, final BigDecimal defaultValue) {
+        return NumberTool.toBigDecimal(getParameter(request, name), defaultValue);
     }
 }
