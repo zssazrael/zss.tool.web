@@ -7,8 +7,16 @@
     <packaging>jar</packaging>
 
     <name>tool.web</name>
-    <url>http://zbox.site/maven/zss/tool.web/</url>
-
+    <licenses>
+        <license>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>Apache License, Version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/zssazrael/zss.tool.web/</url>
+        <connection>https://github.com/zssazrael/zss.tool.web.git</connection>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -57,11 +65,6 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jsp-api</artifactId>
             <version>7.0.73</version>
@@ -73,8 +76,4 @@
             <version>2018.03.26</version>
         </dependency>
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-        </dependencies>
-    </dependencyManagement>
 </project>
