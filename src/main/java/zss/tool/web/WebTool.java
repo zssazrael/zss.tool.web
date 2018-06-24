@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +22,7 @@ import zss.tool.ReflectTool;
 import zss.tool.StringObjectMap;
 import zss.tool.Version;
 
-@Version("2018.05.03")
+@Version("2018.09.21")
 public final class WebTool {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebTool.class);
 
@@ -77,10 +77,7 @@ public final class WebTool {
     public static void forward(final ServletRequest request, final ServletResponse response, final String path) {
         try {
             request.getRequestDispatcher(path).forward(request, response);
-        } catch (ServletException e) {
-            LOGGER.error(e.getMessage(), e);
-            throw new LoggedException();
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             LOGGER.error(e.getMessage(), e);
             throw new LoggedException();
         }

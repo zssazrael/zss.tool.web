@@ -10,10 +10,11 @@ import javax.servlet.ServletResponse;
 
 import zss.tool.Version;
 
-@Version("2017.09.18")
+@Version("2018.06.24")
 public class ServletWrapper implements Servlet {
     private ServletConfig servletConfig;
     private Servlet servlet;
+    private boolean init = false;
 
     @Override
     public void destroy() {
@@ -23,13 +24,21 @@ public class ServletWrapper implements Servlet {
     }
 
     public void setServlet(Servlet servlet) throws ServletException {
+        if (servlet == null) {
+            return;
+        }
         if (this.servlet != null) {
-            this.servlet.destroy();
+            return;
         }
         this.servlet = servlet;
-        if (servlet != null) {
-            servlet.init(servletConfig);
+        if (servletConfig == null) {
+            return;
         }
+        if (init) {
+            return;
+        }
+        init = true;
+        servlet.init(servletConfig);
     }
 
     @Override
@@ -47,7 +56,21 @@ public class ServletWrapper implements Servlet {
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
+        if (servletConfig == null) {
+            return;
+        }
+        if (this.servletConfig != null) {
+            return;
+        }
         this.servletConfig = servletConfig;
+        if (servlet == null) {
+            return;
+        }
+        if (init) {
+            return;
+        }
+        init = true;
+        servlet.init(servletConfig);
     }
 
     @Override

@@ -2,30 +2,28 @@ package zss.tool.web;
 
 import javax.servlet.ServletRequest;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 import zss.tool.Version;
 
-@Version("2016-09-19")
-public class JSPTool
-{
-    public static String escapeJavaScript(final ServletRequest request, final String name)
-    {
+@Version("2018.09.21")
+public class JSPTool {
+    public static String escapeJavaScript(final ServletRequest request, final String name) {
         final Object value = request.getAttribute(name);
-        if (value instanceof String)
-        {
-            return StringEscapeUtils.escapeJavaScript((String) value);
+        if (value instanceof String) {
+            return StringEscapeUtils.escapeEcmaScript((String) value);
         }
         return "";
     }
 
-    public static String escapeHTML(final ServletRequest request, final String name)
-    {
+    public static String escapeHTML(final ServletRequest request, final String name) {
         final Object value = request.getAttribute(name);
-        if (value instanceof String)
-        {
-            return StringEscapeUtils.escapeHtml((String) value);
+        if (value instanceof String) {
+            return StringEscapeUtils.escapeHtml4((String) value);
         }
         return "";
+    }
+
+    private JSPTool() {
     }
 }
